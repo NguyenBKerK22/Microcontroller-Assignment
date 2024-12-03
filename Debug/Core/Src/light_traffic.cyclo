@@ -1,0 +1,8 @@
+../Core/Src/light_traffic.c:10:6:led_red_and_yellow	1
+../Core/Src/light_traffic.c:23:6:led_red_and_green	1
+../Core/Src/light_traffic.c:36:6:led_yellow_and_red	1
+../Core/Src/light_traffic.c:49:6:led_green_and_red	1
+../Core/Src/light_traffic.c:62:6:all_led_red_on	1
+../Core/Src/light_traffic.c:75:6:all_led_red_off	1
+../Core/Src/light_traffic.c:88:6:all_led_green_on	1
+../Core/Src/light_traffic.c:101:6:all_led_yellow_on	1
