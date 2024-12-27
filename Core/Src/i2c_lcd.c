@@ -92,8 +92,6 @@ void lcd_run(){
 		lcd_red_time = red_time;
 		lcd_yellow_time = yellow_time;
 		lcd_green_time = green_time;
-		//setTimer(5,1000);
-		lcd_init();
 
 		lcd_goto_XY(1,0);
 		lcd_send_string("TIME 01:");
@@ -218,9 +216,9 @@ void lcd_run(){
 		lcd_send_data(green_time/10+48);
 		lcd_goto_XY(1,15);
 		lcd_send_data(green_time%10+48);
-		lcd_goto_XY(2,12);
+		lcd_goto_XY(2,10);
 		lcd_send_data(yellow_time/10+48);
-		lcd_goto_XY(2,13);
+		lcd_goto_XY(2,11);
 		lcd_send_data(yellow_time%10+48);
 		break;
 	default:

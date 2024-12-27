@@ -14,7 +14,6 @@ C_SRCS += \
 ../Core/Src/i2c_lcd.c \
 ../Core/Src/light_traffic.c \
 ../Core/Src/main.c \
-../Core/Src/remote.c \
 ../Core/Src/server_flag_processing.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -33,7 +32,6 @@ OBJS += \
 ./Core/Src/i2c_lcd.o \
 ./Core/Src/light_traffic.o \
 ./Core/Src/main.o \
-./Core/Src/remote.o \
 ./Core/Src/server_flag_processing.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -52,7 +50,6 @@ C_DEPS += \
 ./Core/Src/i2c_lcd.d \
 ./Core/Src/light_traffic.d \
 ./Core/Src/main.d \
-./Core/Src/remote.d \
 ./Core/Src/server_flag_processing.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
@@ -69,7 +66,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/button.cyclo ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/command_parser_fsm.cyclo ./Core/Src/command_parser_fsm.d ./Core/Src/command_parser_fsm.o ./Core/Src/command_parser_fsm.su ./Core/Src/fsm_autorun.cyclo ./Core/Src/fsm_autorun.d ./Core/Src/fsm_autorun.o ./Core/Src/fsm_autorun.su ./Core/Src/fsm_manual.cyclo ./Core/Src/fsm_manual.d ./Core/Src/fsm_manual.o ./Core/Src/fsm_manual.su ./Core/Src/fsm_setting.cyclo ./Core/Src/fsm_setting.d ./Core/Src/fsm_setting.o ./Core/Src/fsm_setting.su ./Core/Src/global.cyclo ./Core/Src/global.d ./Core/Src/global.o ./Core/Src/global.su ./Core/Src/i2c_lcd.cyclo ./Core/Src/i2c_lcd.d ./Core/Src/i2c_lcd.o ./Core/Src/i2c_lcd.su ./Core/Src/light_traffic.cyclo ./Core/Src/light_traffic.d ./Core/Src/light_traffic.o ./Core/Src/light_traffic.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/remote.cyclo ./Core/Src/remote.d ./Core/Src/remote.o ./Core/Src/remote.su ./Core/Src/server_flag_processing.cyclo ./Core/Src/server_flag_processing.d ./Core/Src/server_flag_processing.o ./Core/Src/server_flag_processing.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su ./Core/Src/timer.cyclo ./Core/Src/timer.d ./Core/Src/timer.o ./Core/Src/timer.su
+	-$(RM) ./Core/Src/button.cyclo ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/command_parser_fsm.cyclo ./Core/Src/command_parser_fsm.d ./Core/Src/command_parser_fsm.o ./Core/Src/command_parser_fsm.su ./Core/Src/fsm_autorun.cyclo ./Core/Src/fsm_autorun.d ./Core/Src/fsm_autorun.o ./Core/Src/fsm_autorun.su ./Core/Src/fsm_manual.cyclo ./Core/Src/fsm_manual.d ./Core/Src/fsm_manual.o ./Core/Src/fsm_manual.su ./Core/Src/fsm_setting.cyclo ./Core/Src/fsm_setting.d ./Core/Src/fsm_setting.o ./Core/Src/fsm_setting.su ./Core/Src/global.cyclo ./Core/Src/global.d ./Core/Src/global.o ./Core/Src/global.su ./Core/Src/i2c_lcd.cyclo ./Core/Src/i2c_lcd.d ./Core/Src/i2c_lcd.o ./Core/Src/i2c_lcd.su ./Core/Src/light_traffic.cyclo ./Core/Src/light_traffic.d ./Core/Src/light_traffic.o ./Core/Src/light_traffic.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/server_flag_processing.cyclo ./Core/Src/server_flag_processing.d ./Core/Src/server_flag_processing.o ./Core/Src/server_flag_processing.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su ./Core/Src/timer.cyclo ./Core/Src/timer.d ./Core/Src/timer.o ./Core/Src/timer.su
 
 .PHONY: clean-Core-2f-Src
 

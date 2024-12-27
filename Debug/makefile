@@ -34,37 +34,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := PROJECT_STM32F103RB_NUCLEO
+BUILD_ARTIFACT_NAME := A
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-PROJECT_STM32F103RB_NUCLEO.elf \
+A.elf \
 
 MAP_FILES += \
-PROJECT_STM32F103RB_NUCLEO.map \
+A.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-PROJECT_STM32F103RB_NUCLEO.list \
+A.list \
 
 OBJCOPY_HEX += \
-PROJECT_STM32F103RB_NUCLEO.hex \
+A.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: PROJECT_STM32F103RB_NUCLEO.elf secondary-outputs
+main-build: A.elf secondary-outputs
 
 # Tool invocations
-PROJECT_STM32F103RB_NUCLEO.elf PROJECT_STM32F103RB_NUCLEO.map: $(OBJS) $(USER_OBJS) D:\vxl\PROJECT\PROJECT_STM32F103RB_NUCLEO\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PROJECT_STM32F103RB_NUCLEO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\vxl\PROJECT\PROJECT_STM32F103RB_NUCLEO\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PROJECT_STM32F103RB_NUCLEO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+A.elf A.map: $(OBJS) $(USER_OBJS) D:\A\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "A.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\A\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="A.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -73,19 +73,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-PROJECT_STM32F103RB_NUCLEO.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "PROJECT_STM32F103RB_NUCLEO.list"
+A.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "A.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-PROJECT_STM32F103RB_NUCLEO.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "PROJECT_STM32F103RB_NUCLEO.hex"
+A.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "A.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) PROJECT_STM32F103RB_NUCLEO.elf PROJECT_STM32F103RB_NUCLEO.hex PROJECT_STM32F103RB_NUCLEO.list PROJECT_STM32F103RB_NUCLEO.map default.size.stdout
+	-$(RM) A.elf A.hex A.list A.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

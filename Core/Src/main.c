@@ -102,6 +102,7 @@ int main(void)
   MX_I2C1_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+  lcd_init();
   command_parser_init();
   HAL_TIM_Base_Start_IT(&htim2);
 //  ESP_INIT();
@@ -109,26 +110,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(9, 1000);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if(flag_timer[9] == 1){
-		  setTimer(9, 1000);
-		  HAL_UART_Transmit(&huart3, buffer, 5, 1000);
-	  };
 
 	  command_parser_fsm();
 	  server_flag_processing_run();
-
-
 	  lcd_run();
 	  fsm_autorun();
 	  fsm_manual();
 	  fsm_setting();
-	  remote_run();
 
 
 //	  server_on();

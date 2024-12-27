@@ -107,7 +107,6 @@ void fsm_setting(){
 		if(flag_timer[4] == 1){
 			if(status_ld == 1){
 				all_led_red_off();
-				//all_led_yellow_off();
 				status_ld = 0;
 			}
 			else{
@@ -119,11 +118,12 @@ void fsm_setting(){
 		break;
 	case INIT_REMOTE_SETTING:
 		lcd_clear_display();
+		HAL_Delay(5);
 		lcd_goto_XY(1,0);
 		lcd_send_string("RED=");
 		lcd_goto_XY(1,8);
 		lcd_send_string("GREEN=");
-		lcd_goto_XY(2,5);
+		lcd_goto_XY(2,3);
 		lcd_send_string("YELLOW=");
 		status_fsm = REMOTE_SETTING;
 		break;
