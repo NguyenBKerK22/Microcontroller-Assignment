@@ -30,6 +30,8 @@
 #define YELLOW_SETTING 10
 #define GREEN_SETTING 11
 #define INIT_SETTING 12
+#define INIT_REMOTE_SETTING 200
+#define REMOTE_SETTING 201
 //---------------------------------------------------
 #include "light_traffic.h"
 #include "timer.h"
