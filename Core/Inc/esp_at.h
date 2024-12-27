@@ -33,9 +33,6 @@ extern char *page2_Top;
 extern char *page2_end;
 extern char *table;
 
-extern uint8_t UID[5];
-extern uint8_t store_UID[5];
-
 extern int Server_State;
 
 extern UART_HandleTypeDef huart3;
