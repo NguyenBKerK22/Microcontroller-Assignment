@@ -1,0 +1,2 @@
+../Core/Src/remote.c:3:6:remote_run	4	static
+../Core/Src/remote.c:5:6:remote_init	4	static

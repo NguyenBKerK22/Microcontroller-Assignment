@@ -117,6 +117,19 @@ void fsm_setting(){
 			setTimer(4,500);
 		}
 		break;
+	case INIT_REMOTE_SETTING:
+		lcd_clear_display();
+		lcd_goto_XY(1,0);
+		lcd_send_string("RED=");
+		lcd_goto_XY(1,8);
+		lcd_send_string("GREEN=");
+		lcd_goto_XY(2,5);
+		lcd_send_string("YELLOW=");
+		status_fsm = REMOTE_SETTING;
+		break;
+	case REMOTE_SETTING:
+
+		break;
 	default:
 		break;
 	}

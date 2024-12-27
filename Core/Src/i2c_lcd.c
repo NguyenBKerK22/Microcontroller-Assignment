@@ -9,7 +9,7 @@
 #include "i2c_lcd.h"
 extern I2C_HandleTypeDef hi2c1;  // change your handler here accordingly
 
-#define SLAVE_ADDRESS_LCD 0x4E // change this according to ur setup
+#define SLAVE_ADDRESS_LCD 0x21 << 1 // change this according to ur setup
 
 //int lcd_red_time = 0;
 //int lcd_green_time = 0;
@@ -191,9 +191,6 @@ void lcd_run(){
 		lcd_send_string("                ");
 		break;
 	case INIT_SETTING:
-		lcd_clear_display();
-		lcd_goto_XY(1,0);
-		lcd_send_string(" TRAFFIC SETTING");
 		break;
 	case RED_SETTING:
 		lcd_goto_XY(2,0);
@@ -209,6 +206,22 @@ void lcd_run(){
 		lcd_goto_XY(2,0);
 		sprintf(lcd_buf," TIME GREEN: %d ",green_time+green_time_increase);
 		lcd_send_string(lcd_buf);
+		break;
+	case INIT_REMOTE_SETTING:
+		break;
+	case REMOTE_SETTING:
+		lcd_goto_XY(1,4);
+		lcd_send_data(red_time/10+48);
+		lcd_goto_XY(1,5);
+		lcd_send_data(red_time%10+48);
+		lcd_goto_XY(1,14);
+		lcd_send_data(green_time/10+48);
+		lcd_goto_XY(1,15);
+		lcd_send_data(green_time%10+48);
+		lcd_goto_XY(2,12);
+		lcd_send_data(yellow_time/10+48);
+		lcd_goto_XY(2,13);
+		lcd_send_data(yellow_time%10+48);
 		break;
 	default:
 		break;

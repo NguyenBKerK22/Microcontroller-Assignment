@@ -28,7 +28,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/global.h ../Core/Inc/light_traffic.h ../Core/Inc/timer.h \
  ../Core/Inc/button.h ../Core/Inc/main.h ../Core/Inc/fsm_autorun.h \
  ../Core/Inc/fsm_setting.h ../Core/Inc/i2c_lcd.h ../Core/Inc/global.h \
- ../Core/Inc/esp_at.h ../Core/Inc/fsm_manual.h ../Core/Inc/i2c_lcd.h
+ ../Core/Inc/fsm_manual.h ../Core/Inc/i2c_lcd.h \
+ ../Core/Inc/command_parser_fsm.h ../Core/Inc/server_flag_processing.h \
+ ../Core/Inc/timer.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -65,6 +67,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/fsm_setting.h:
 ../Core/Inc/i2c_lcd.h:
 ../Core/Inc/global.h:
-../Core/Inc/esp_at.h:
 ../Core/Inc/fsm_manual.h:
 ../Core/Inc/i2c_lcd.h:
+../Core/Inc/command_parser_fsm.h:
+../Core/Inc/server_flag_processing.h:
+../Core/Inc/timer.h:
