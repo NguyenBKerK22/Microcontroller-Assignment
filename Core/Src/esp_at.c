@@ -288,9 +288,9 @@ void server_on(){
 				HAL_UART_Transmit(&huart3,(uint8_t*)buffer,14, 100);
 				memset(buffer,0,sizeof(buffer));
 				Server_Send(Link_ID-48,setting);
-				Flag_Response = 0;
-				WaitForResponse(10000, "\r\n", "ERROR\r\n");
-				if(Flag_Response == 1) memset(ESP_Response,0,sizeof(ESP_Response));
+//				Flag_Response = 0;
+//				WaitForResponse(10000, "\r\n", "ERROR\r\n");
+//				if(Flag_Response == 1) memset(ESP_Response,0,sizeof(ESP_Response));
 			}
 			else if(strstr((char*)ESP_Response,"/ ")!=NULL){
 				Server_Send(Link_ID-48, home);
