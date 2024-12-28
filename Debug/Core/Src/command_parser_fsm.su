@@ -18,4 +18,4 @@
 ../Core/Src/command_parser_fsm.c:104:9:getBufferFlag	4	static
 ../Core/Src/command_parser_fsm.c:108:6:setBufferFlag	16	static
 ../Core/Src/command_parser_fsm.c:115:6:command_parser_fsm	8	static
-../Core/Src/command_parser_fsm.c:498:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/command_parser_fsm.c:497:6:HAL_UART_RxCpltCallback	16	static

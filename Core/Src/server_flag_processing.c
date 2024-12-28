@@ -39,7 +39,7 @@ void server_flag_processing_run() {
 	;
 	if (getManFlag() == 1) {
 		setManFlag(0);
-		status_fsm += 5;
+		if(status_fsm < INIT) status_fsm += 5;
 		return;
 	};
 	if(getDataFlag() == 1){
@@ -47,7 +47,7 @@ void server_flag_processing_run() {
 		green_time = (buffer[(old_process_idx - 1)%30] - 48) + (buffer[(old_process_idx - 2)%30] - 48)*10;
 		yellow_time = (buffer[(old_process_idx - 5)%30] - 48) + (buffer[(old_process_idx - 6)%30] - 48)*10;
 		red_time = (buffer[(old_process_idx - 9)%30] - 48) + (buffer[(old_process_idx - 10)%30] - 48)*10;
-		HAL_UART_Transmit(&huart3, &green_time, 1, 1000);
+		//HAL_UART_Transmit(&huart3, &green_time, 1, 1000);
 		//status_fsm = INIT;
 	};
 }

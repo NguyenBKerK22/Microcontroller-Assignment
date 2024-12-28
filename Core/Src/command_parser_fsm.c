@@ -129,7 +129,6 @@ void command_parser_fsm() {
 		idx = process_idx % 30;
 		if (buffer[idx] == '!') {
 			status = CMD_PARSER_MARK;
-			HAL_UART_Transmit(&huart3, (unsigned char*)'N', 1, 1000);
 			buffer_flag = 0;
 			break;
 		}
@@ -498,7 +497,6 @@ void command_parser_fsm() {
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	if (huart->Instance == USART3) {
 		buffer[index_buffer++%30] = temp;
-
 		buffer_flag = 1;
 		HAL_UART_Receive_IT(&huart3, &temp, 1);
 	};

@@ -92,7 +92,8 @@ void lcd_run(){
 		lcd_red_time = red_time;
 		lcd_yellow_time = yellow_time;
 		lcd_green_time = green_time;
-
+		lcd_clear_display();
+		HAL_Delay(5);
 		lcd_goto_XY(1,0);
 		lcd_send_string("TIME 01:");
 		lcd_goto_XY(2,0);
