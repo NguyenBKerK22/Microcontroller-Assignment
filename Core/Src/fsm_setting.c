@@ -78,7 +78,6 @@ void fsm_setting(){
 		if(flag_timer[4] == 1){
 			if(status_ld == 1){
 				all_led_red_off();
-				//all_led_green_off();
 				status_ld = 0;
 			}
 			else{

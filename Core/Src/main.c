@@ -309,14 +309,14 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : A0_Pin */
-  GPIO_InitStruct.Pin = A0_Pin;
+  GPIO_InitStruct.Pin = A0_Pin|A3_Pin|A1_Pin|A2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(A0_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : A1_Pin A2_Pin LD2_Pin D7_Pin
                            D8_Pin */
-  GPIO_InitStruct.Pin = A1_Pin|A2_Pin|LD2_Pin|D7_Pin
+  GPIO_InitStruct.Pin = LD2_Pin|D7_Pin
                           |D8_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -337,7 +337,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : A3_Pin D6_Pin D3_Pin D5_Pin
                            D4_Pin D10_Pin */
-  GPIO_InitStruct.Pin = A3_Pin|D6_Pin|D3_Pin|D5_Pin
+  GPIO_InitStruct.Pin = D6_Pin|D3_Pin|D5_Pin
                           |D4_Pin|D10_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
